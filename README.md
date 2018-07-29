@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## PWA
+Make a Progressive Web App: https://angular.io/guide/service-worker-getting-started
+
+Execute this command: `ng add  @angular/pwa`
+
+> Note at the time I wrote this, there is the following error when running this command `Path "/ngsw-config.json" already exist`. I used the solution described at https://stackoverflow.com/a/51562327/2179668 and used the following command instead `ng add  @angular/pwa@0.6.8` (with `@angular/cli@6.0.8` installed)
+
