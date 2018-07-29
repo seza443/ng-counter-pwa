@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-gh-pages": "ng build --prod --base-href 'https://seza443.github.io/ng-counter-pwa/' && rm -rf docs && cp -r dist/counterapp-pwa docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
