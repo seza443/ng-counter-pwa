@@ -36,3 +36,11 @@ Execute this command: `ng add  @angular/pwa`
 
 
 Run with `npm run pwa` (*it requires the NPM package http-server*)
+
+## Deployment
+This project is deployed on [Github Pages](https://pages.github.com/).
+The sources are placed in the */docs* folder of the branch master.
+
+The live version can be accessed at this address: https://seza443.github.io/ng-counter-pwa
+
+To build the project use `npm run build-gh-pages` on the master branch, then push it to Github.
