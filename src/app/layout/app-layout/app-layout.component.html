@@ -1,0 +1,11 @@
+<mat-sidenav-container id="base-container">
+    <mat-sidenav #sidenav>
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-topbar
+      (toggleSidebarEvent)="sidenav.toggle()"
+      ></app-topbar>
+      CONTENT
+    </mat-sidenav-content>
+  </mat-sidenav-container>
