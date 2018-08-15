@@ -1,11 +1,12 @@
 {
   "name": "Counter PWA",
-  "short_name": "counterapp-pwa",
+  "short_name": "Count",
+  "description": "Count stuffs",
   "theme_color": "#df10a1",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/ng-counter-pwa",
+  "start_url": "/ng-counter-pwa",
   "icons": [
     {
       "src": "assets/icons/linecons_e000(0)_72.png",
