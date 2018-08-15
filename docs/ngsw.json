@@ -9,10 +9,10 @@
       "urls": [
         "https://seza443.github.io/ng-counter-pwa/favicon.ico",
         "https://seza443.github.io/ng-counter-pwa/index.html",
-        "https://seza443.github.io/ng-counter-pwa/main.81ea0427a5b92fdafcb2.js",
+        "https://seza443.github.io/ng-counter-pwa/main.c577d38aa55f4d6ac28b.js",
         "https://seza443.github.io/ng-counter-pwa/polyfills.2f4a59095805af02bd79.js",
         "https://seza443.github.io/ng-counter-pwa/runtime.a66f828dca56eeb90e02.js",
-        "https://seza443.github.io/ng-counter-pwa/styles.34c57ab7888ec1573f9c.css"
+        "https://seza443.github.io/ng-counter-pwa/styles.129aea33569819a1b6fd.css"
       ],
       "patterns": []
     },
@@ -21,6 +21,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "https://seza443.github.io/ng-counter-pwa/assets/fontawesome/all.min.js",
         "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_128.png",
         "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_144.png",
         "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_152.png",
@@ -35,6 +36,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "https://seza443.github.io/ng-counter-pwa/assets/fontawesome/all.min.js": "53d1555ccc216e6b276e764dc99c7b45a5772a66",
     "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_128.png": "fd255e7cf4dbee8891d16a8f4eac8399f4551e6c",
     "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_144.png": "d35eef82f0f046ce562b31c8ef301f02eaf26025",
     "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_152.png": "7bafc6ac2275ce51268303270836073049070d5e",
@@ -44,11 +46,11 @@
     "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_72.png": "c2060fde00652a923ff5d6173598d6607f83bee8",
     "https://seza443.github.io/ng-counter-pwa/assets/icons/linecons_e000(0)_96.png": "9b6abdd99a3d208404aaf9c314630f3bca9921b3",
     "https://seza443.github.io/ng-counter-pwa/favicon.ico": "8afba7282315fd5ad31719cf5f0a38548f7ddc84",
-    "https://seza443.github.io/ng-counter-pwa/index.html": "4d100c9b015f58500e2e28a89e4b80a7bc2af079",
-    "https://seza443.github.io/ng-counter-pwa/main.81ea0427a5b92fdafcb2.js": "5daad0d21d71bd3bd0d42bd7c99813209fb9c6a1",
+    "https://seza443.github.io/ng-counter-pwa/index.html": "d723ab61e2f932c85b0679f7183f2237adee9633",
+    "https://seza443.github.io/ng-counter-pwa/main.c577d38aa55f4d6ac28b.js": "5fb565988ddb80be599f52ab8f95d0cd61e6f899",
     "https://seza443.github.io/ng-counter-pwa/polyfills.2f4a59095805af02bd79.js": "8949bb1b1e302dda246f6ed9c2da703270360b1f",
     "https://seza443.github.io/ng-counter-pwa/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
-    "https://seza443.github.io/ng-counter-pwa/styles.34c57ab7888ec1573f9c.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "https://seza443.github.io/ng-counter-pwa/styles.129aea33569819a1b6fd.css": "e2a83e63797e780fb85cf4e42ed03cba2236a487"
   },
   "navigationUrls": [
     {
