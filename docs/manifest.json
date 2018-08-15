@@ -48,5 +48,16 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "routing": {
+		"index": "/index.html",
+		"routes": {
+			"/": {
+				"prefix": false
+			},
+			"/route": {
+				"prefix": true
+			}
+		}
+	}
 }
