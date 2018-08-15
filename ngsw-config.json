@@ -1,11 +1,5 @@
 {
   "index": "/index.html",
-  "navigationUrls": [
-    "/**",
-    "!/**/*.*",
-    "!/**/*__*",
-    "!/**/*__*/**"
-  ],
   "assetGroups": [{
     "name": "app",
     "installMode": "prefetch",
