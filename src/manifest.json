@@ -53,10 +53,7 @@
 		"index": "/index.html",
 		"routes": {
 			"/": {
-				"prefix": false
-			},
-			"/route": {
-				"prefix": true
+				"match": "exact"
 			}
 		}
 	}
