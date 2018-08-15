@@ -25,7 +25,41 @@ export class CountersStorageService {
             );
     }
 
+    /**
+     * Get a list of all counters
+     */
     public list(): Observable<CounterI[]> {
         return fromPromise(this.sm.db.counters.toArray());
+    }
+
+    public update(counter: CounterI): Observable<CounterI> {
+        return fromPromise(this.sm.db.counters.put(counter, counter.id))
+            .pipe(
+                mergeMap((id: number) => {
+                    return observableOf(counter);
+                })
+            );
+    }
+
+    public setFavourite(id: number, isFavourite: boolean): Observable<boolean> {
+        return fromPromise(this.sm.db.counters.update(id, { isFavourite: isFavourite }))
+            .pipe(
+                mergeMap((_id: number) => {
+                    return observableOf(isFavourite);
+                })
+            );
+    }
+
+    /**
+     * Delete the counter from its ID
+     * @param counterId
+     */
+    public delete(counterId: number): Observable<number> {
+        return fromPromise(this.sm.db.counters.delete(counterId))
+            .pipe(
+                mergeMap((id: number) => {
+                    return observableOf(counterId);
+                })
+            );
     }
 }

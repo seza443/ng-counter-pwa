@@ -5,7 +5,6 @@ export class CrashReportService {
     constructor() { }
 
     public logError(error: any): void {
-        console.log('Error:');
-        console.log(error);
+        console.error('Error:', error);
     }
 }

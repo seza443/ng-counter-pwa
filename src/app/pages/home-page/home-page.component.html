@@ -1,5 +1,6 @@
 <div *ngIf="!isLoadingCounters">
-    <app-counters-list [counters]="counters"></app-counters-list>
+    <app-counters-list [counters]="counters" (editEvent)="editCounter($event)"
+    (deleteEvent)="deleteCounter($event)"></app-counters-list>
 </div>
 
 <div *ngIf="isLoadingCounters">

@@ -6,7 +6,10 @@ import {
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
 } from '@angular/material';
 
 const MATERIAL_ANGULAR_COMPONENTS = [
@@ -16,7 +19,10 @@ const MATERIAL_ANGULAR_COMPONENTS = [
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
 ];
 
 @NgModule({
