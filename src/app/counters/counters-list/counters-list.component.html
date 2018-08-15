@@ -6,8 +6,9 @@
         <button mat-icon-button (click)="delete(counter)" color="warn">
             <i class="fas fa-trash"></i>
         </button>
-        <button mat-button class="h-100 w-100 text-left">
+        <button mat-button (click)="hit(counter)" class="h-100 w-100 text-left">
             <span class="h4">{{counter.name}}</span>
+            <span>({{counter.totalHits}})</span>
         </button>
     </li>
 </ul>

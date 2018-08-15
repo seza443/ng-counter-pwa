@@ -1,15 +1,21 @@
 <div *ngIf="!isLoadingCounters">
-    <app-counters-list [counters]="counters" (editEvent)="editCounter($event)"
-    (deleteEvent)="deleteCounter($event)"></app-counters-list>
+    <app-counters-list [counters]="counters" (editEvent)="editCounterHandler($event)" (deleteEvent)="deleteCounterHandler($event)"
+        (hitEvent)="hitCounterHandler($event)"></app-counters-list>
 </div>
 
 <div *ngIf="isLoadingCounters">
     <app-spinner></app-spinner>
 </div>
 
+<div *ngIf="!isLoadingCounters && counters.length === 0">
+    <div class="alert alert-info">
+        Start by adding a counter with the button below
+    </div>
+</div>
+
 
 <div class="fab-container">
-    <button mat-mini-fab (click)="createCounter()">
+    <button mat-mini-fab (click)="createCounterHandler()">
         <i class="fas fa-plus"></i>
     </button>
 </div>

@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material';
 import { CreateCounterDialogComponent } from '../../counters/create-counter-dialog/create-counter-dialog.component';
 import { isNullOrUndefined } from 'util';
 import { EditCounterDialogComponent } from '../../counters/edit-counter-dialog/edit-counter-dialog.component';
+import { HitI } from '../../storage/models/hit.interface';
+import { HitsStorageService } from '../../storage/hits-storage.service';
 
 @Component({
     selector: 'app-home-page',
@@ -19,6 +21,7 @@ export class HomePageComponent implements OnInit {
     constructor(
         private cr: CrashReportService,
         private countersStorage: CountersStorageService,
+        private hitsStorage: HitsStorageService,
         private dialog: MatDialog
     ) { }
 
@@ -26,7 +29,7 @@ export class HomePageComponent implements OnInit {
         this.fetchCountersList();
     }
 
-    public createCounter(): void {
+    public createCounterHandler(): void {
         const dialogRef = this.dialog.open(CreateCounterDialogComponent);
         dialogRef.afterClosed().subscribe((newCounter) => {
             if (!isNullOrUndefined(newCounter)) {
@@ -42,30 +45,54 @@ export class HomePageComponent implements OnInit {
         });
     }
 
-    public editCounter(counterToEdit): void {
+    public editCounterHandler(counterToEdit: CounterI): void {
         const dialogRef = this.dialog.open(EditCounterDialogComponent, {
-            data: counterToEdit
+            data: Object.assign({}, counterToEdit)
         });
         dialogRef.afterClosed().subscribe((counterToUpdate) => {
             if (!isNullOrUndefined(counterToUpdate)) {
-                this.countersStorage.update(counterToUpdate).subscribe(
-                    (updatedCounter) => {
-                        const updatedCounterId = this.counters.findIndex((c) => c.id === updatedCounter.id);
-                        this.counters[updatedCounterId] = updatedCounter;
-                    },
-                    (error) => {
-                        this.cr.logError(error);
-                    }
-                );
+                this.doUpdateCounter(counterToUpdate);
             }
         });
     }
 
-    public deleteCounter(counterToDelete): void {
+    public deleteCounterHandler(counterToDelete: CounterI): void {
         this.countersStorage.delete(counterToDelete.id).subscribe(
             (deletedCounterId) => {
                 const updatedCounterId = this.counters.findIndex((c) => c.id === deletedCounterId);
                 this.counters.splice(updatedCounterId, 1);
+            },
+            (error) => {
+                this.cr.logError(error);
+            }
+        );
+    }
+
+    public hitCounterHandler(counterHit: CounterI): void {
+        counterHit.lastHitDate = new Date();
+        counterHit.totalHits += 1;
+        this.doUpdateCounter(counterHit);
+        this.addHitToCounter(counterHit);
+    }
+
+    private doUpdateCounter(counterToUpdate: CounterI) {
+        this.countersStorage.update(counterToUpdate).subscribe((updatedCounter) => {
+            const updatedCounterId = this.counters.findIndex((c) => c.id === updatedCounter.id);
+            this.counters[updatedCounterId] = updatedCounter;
+        }, (error) => {
+            this.cr.logError(error);
+        });
+    }
+
+    private addHitToCounter(counter: CounterI): void {
+        const newHit: HitI = {
+            counterId: counter.id,
+            label: null,
+            hitDate: new Date()
+        };
+        this.hitsStorage.create(newHit).subscribe(
+            (createdHit) => {
+
             },
             (error) => {
                 this.cr.logError(error);

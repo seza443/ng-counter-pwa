@@ -10,6 +10,7 @@ export class CountersListComponent implements OnInit {
     @Input() counters: CounterI;
     @Output() editEvent: EventEmitter<CounterI> = new EventEmitter();
     @Output() deleteEvent: EventEmitter<CounterI> = new EventEmitter();
+    @Output() hitEvent: EventEmitter<CounterI> = new EventEmitter();
 
     constructor() { }
 
@@ -21,5 +22,9 @@ export class CountersListComponent implements OnInit {
 
     public delete(counter): void {
         this.deleteEvent.emit(counter);
+    }
+
+    public hit(counter): void {
+        this.hitEvent.emit(counter);
     }
 }

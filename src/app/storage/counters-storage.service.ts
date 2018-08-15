@@ -33,10 +33,19 @@ export class CountersStorageService {
     }
 
     public update(counter: CounterI): Observable<CounterI> {
-        return fromPromise(this.sm.db.counters.put(counter, counter.id))
+        return fromPromise(this.sm.db.counters.update(counter.id, {
+            name: counter.name,
+            isFavourite: counter.isFavourite,
+            lastHitDate: counter.lastHitDate,
+            totalHits: counter.totalHits
+        }))
             .pipe(
-                mergeMap((id: number) => {
-                    return observableOf(counter);
+                mergeMap((numberOfUpdatedObjects: number) => {
+                    if (numberOfUpdatedObjects === 1) {
+                        return observableOf(counter);
+                    } else {
+                        throw Error(`Counter ${counter.id} not found or nothing changed`);
+                    }
                 })
             );
     }
@@ -44,8 +53,12 @@ export class CountersStorageService {
     public setFavourite(id: number, isFavourite: boolean): Observable<boolean> {
         return fromPromise(this.sm.db.counters.update(id, { isFavourite: isFavourite }))
             .pipe(
-                mergeMap((_id: number) => {
-                    return observableOf(isFavourite);
+                mergeMap((numberOfUpdatedObjects: number) => {
+                    if (numberOfUpdatedObjects === 1) {
+                        return observableOf(isFavourite);
+                    } else {
+                        throw Error(`Counter ${id} not found or nothing changed`);
+                    }
                 })
             );
     }
