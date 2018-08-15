@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { CountersModule } from '../counters/counters.module';
 import { DummyModule } from '../dummy/dummy.module';
 import { RouterModule } from '@angular/router';
+import { AngularMaterialModule } from '../angular-material.module';
 
 const PAGES = [
     HomePageComponent,
@@ -23,6 +24,7 @@ const PAGES = [
         CountersModule,
         DummyModule,
         RouterModule,
+        AngularMaterialModule
     ]
 })
 export class PagesModule { }

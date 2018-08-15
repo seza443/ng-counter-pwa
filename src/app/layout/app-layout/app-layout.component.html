@@ -6,6 +6,8 @@
       <app-topbar
       (toggleSidebarEvent)="sidenav.toggle()"
       ></app-topbar>
-      <router-outlet></router-outlet>
+      <div class="container mt-1">
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

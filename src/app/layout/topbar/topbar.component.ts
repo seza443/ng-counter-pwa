@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { ROUTES_PATH } from '../../routing/app.routes';
 
 @Component({
     selector: 'app-topbar',
@@ -7,6 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class TopbarComponent {
     @Output() toggleSidebarEvent: EventEmitter<void> = new EventEmitter();
+    routes = ROUTES_PATH;
 
     /**
      * Toggle the sidebar

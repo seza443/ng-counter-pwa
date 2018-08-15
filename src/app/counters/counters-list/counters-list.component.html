@@ -1,5 +1,5 @@
-<ul>
-    <li *ngFor="let counter of counters">
-        {{counter | json}}
+<ul class="list-group">
+    <li *ngFor="let counter of counters" class="list-group-item">
+        <h4>{{counter.name}}</h4>
     </li>
 </ul>
