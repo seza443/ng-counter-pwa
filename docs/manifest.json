@@ -6,7 +6,7 @@
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/ng-counter-pwa",
-  "start_url": "/ng-counter-pwa",
+  "start_url": "/ng-counter-pwa/index.html",
   "icons": [
     {
       "src": "assets/icons/linecons_e000(0)_72.png",
