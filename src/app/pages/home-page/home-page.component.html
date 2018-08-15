@@ -1,0 +1,11 @@
+<div *ngIf="!isLoadingCounters">
+    <app-counters-list
+    [counters]="counters"
+    ></app-counters-list>
+</div>
+
+<div *ngIf="isLoadingCounters">
+    <app-spinner></app-spinner>
+</div>
+
+<button (click)="createCounter()">new counter</button>

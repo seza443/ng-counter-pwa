@@ -1,13 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { StartupService } from './startup.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { LayoutModule } from './layout/layout.module';
+import { PagesModule } from './pages/pages.module';
+import { StorageModule } from './storage/storage.module';
+import { AppRoutingModule } from './routing/app-routing.module';
+import { CommonModule } from '@angular/common';
+import { CountersModule } from './counters/counters.module';
+import { CrashReportService } from './crash-report.service';
 
 @NgModule({
   declarations: [
@@ -17,19 +22,15 @@ import { LayoutModule } from './layout/layout.module';
     BrowserModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
+    AppRoutingModule,
+    CommonModule,
     AngularMaterialModule,
     LayoutModule,
+    PagesModule,
+    StorageModule,
   ],
   providers: [
-    StartupService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (startupService: StartupService) => function () {
-        return startupService.appStartup();
-      },
-      deps: [StartupService],
-      multi: true
-    },
+    CrashReportService
   ],
   bootstrap: [AppComponent]
 })
