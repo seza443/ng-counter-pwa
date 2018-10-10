@@ -8,6 +8,7 @@ import { isNullOrUndefined } from 'util';
 import { EditCounterDialogComponent } from '../../counters/edit-counter-dialog/edit-counter-dialog.component';
 import { HitI } from '../../storage/models/hit.interface';
 import { HitsStorageService } from '../../storage/hits-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home-page',
@@ -22,10 +23,16 @@ export class HomePageComponent implements OnInit {
         private cr: CrashReportService,
         private countersStorage: CountersStorageService,
         private hitsStorage: HitsStorageService,
-        private dialog: MatDialog
+        private dialog: MatDialog,
+        private router: Router
     ) { }
 
     ngOnInit() {
+        if (this.router.url === '/') {
+            // redirect to same component but /list
+            this.router.navigate(['/', 'list']);
+        }
+
         this.fetchCountersList();
     }
 

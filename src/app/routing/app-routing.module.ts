@@ -6,6 +6,7 @@ import { HomePageComponent } from '../pages/home-page/home-page.component';
 import { NotFoundPageComponent } from '../pages/not-found-page/not-found-page.component';
 
 const ROUTES: Routes = [
+  {path: ROUTES_PATH.COUNTER_LIST, component: HomePageComponent},
   {path: ROUTES_PATH.HOME, component: HomePageComponent},
   {path: ROUTES_PATH.NOT_FOUND, component: NotFoundPageComponent},
   {path: '**', component: NotFoundPageComponent}
